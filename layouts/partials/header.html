@@ -1,0 +1,14 @@
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="{{ "/" | relURL }}">
+      <span class="brand__mark">1064</span><span class="brand__type">MFG</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <ul>
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL | relURL }}">[ {{ .Name | upper }} ]</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</header>

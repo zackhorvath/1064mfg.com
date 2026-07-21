@@ -1,0 +1,50 @@
+baseURL = "https://1064mfg.com/"
+locale = "en-US"
+title = "1064 MFG LLC"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  tagline = "PRECISION FABRICATION"
+  subtagline = "Additive Manufacturing // Laser Engraving"
+  description = "1064 MFG LLC — 3D printing and laser engraving services. From rapid prototypes to finished props, built to spec."
+  email = "hello@1064mfg.com"
+  founded = "2024"
+  serial = "UNIT-1064"
+
+  [params.social]
+    instagram = "https://www.instagram.com/1064mfg"
+    github = "https://github.com/zackhorvath"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 10
+  [[menu.main]]
+    identifier = "services"
+    name = "Services"
+    url = "/#services"
+    weight = 20
+  [[menu.main]]
+    identifier = "work"
+    name = "Work"
+    url = "/#work"
+    weight = 30
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
+    weight = 40
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[minify]
+  disableXML = true
+
+[outputs]
+  home = ["HTML", "RSS"]

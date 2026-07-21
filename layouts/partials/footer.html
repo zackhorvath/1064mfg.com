@@ -1,0 +1,15 @@
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div class="plate">
+      <span class="plate__row">{{ .Site.Params.serial }}</span>
+      <span class="plate__row">EST. {{ .Site.Params.founded }}</span>
+      <span class="plate__row">SHOP: OPERATIONAL</span>
+    </div>
+    <div class="footer-links">
+      {{ with .Site.Params.social.instagram }}<a href="{{ . }}" target="_blank" rel="noopener">INSTAGRAM</a>{{ end }}
+      {{ with .Site.Params.social.github }}<a href="{{ . }}" target="_blank" rel="noopener">GITHUB</a>{{ end }}
+      <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+    </div>
+    <div class="copyright">&copy; {{ now.Format "2006" }} 1064 MFG LLC. ALL RIGHTS RESERVED.</div>
+  </div>
+</footer>

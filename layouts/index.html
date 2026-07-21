@@ -1,0 +1,73 @@
+{{ define "main" }}
+{{ $hero := .Params.hero }}
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero__eyebrow">{{ $hero.eyebrow }}</div>
+    <h1 class="hero__heading">{{ $hero.heading }}</h1>
+    <p class="hero__sub">{{ $hero.sub }}</p>
+    <p class="hero__body">{{ $hero.body }}</p>
+    <a class="btn btn--primary" href="{{ $hero.cta_url | relURL }}">{{ $hero.cta_label }}</a>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <div class="wrap">
+    <h2 class="section-title"><span class="section-title__index">01</span> Services</h2>
+    <div class="services__grid">
+      {{ range .Params.services }}
+      <article class="panel service-card">
+        <div class="panel__label">{{ .code }}</div>
+        <h3 class="service-card__name">{{ .name }}</h3>
+        <p class="service-card__body">{{ .body }}</p>
+        <ul class="spec-list">
+          {{ range .specs }}<li>{{ . }}</li>{{ end }}
+        </ul>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section id="work" class="work">
+  <div class="wrap">
+    <h2 class="section-title"><span class="section-title__index">02</span> Selected Work</h2>
+    <div class="work__grid">
+      {{ range .Params.work }}
+      <article class="panel work-card">
+        <div class="work-card__icon">{{ partial "icon.html" .icon }}</div>
+        <div class="panel__label">{{ .code }}</div>
+        <h3 class="work-card__title">{{ .title }}</h3>
+        <p class="work-card__tag">{{ .tag }}</p>
+      </article>
+      {{ end }}
+    </div>
+    <p class="work__note">Portfolio in progress — more units incoming.</p>
+  </div>
+</section>
+
+<section id="process" class="process">
+  <div class="wrap">
+    <h2 class="section-title"><span class="section-title__index">03</span> Process</h2>
+    <div class="process__grid">
+      {{ range .Params.process }}
+      <div class="process-step">
+        <div class="process-step__num">{{ .step }}</div>
+        <div class="process-step__label">{{ .label }}</div>
+        <p class="process-step__body">{{ .body }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-band__inner">
+    <div>
+      <h2 class="cta-band__heading">Have a build in mind?</h2>
+      <p class="cta-band__body">Send specs, references, or a rough sketch — we'll quote it.</p>
+    </div>
+    <a class="btn btn--primary" href="{{ "/contact/" | relURL }}">[ REQUEST A QUOTE ]</a>
+  </div>
+</section>
+{{ end }}
