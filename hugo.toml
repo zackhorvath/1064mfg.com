@@ -5,15 +5,15 @@ enableRobotsTXT = true
 disableKinds = ["taxonomy", "term"]
 
 [params]
-  tagline = "PRECISION FABRICATION"
+  tagline = "CUSTOM CREATIONS"
   subtagline = "Additive Manufacturing // Laser Engraving"
   description = "1064 MFG LLC — 3D printing and laser engraving services. From rapid prototypes to finished props, built to spec."
-  email = "hello@1064mfg.com"
-  founded = "2024"
-  serial = "UNIT-1064"
+  email = "zack@1064mfg.com"
+  founded = "2026"
+  serial = "KENT, WA"
 
   [params.social]
-    instagram = "https://www.instagram.com/1064mfg"
+    instagram = "https://www.instagram.com/horvaticus"
     github = "https://github.com/zackhorvath"
 
 [menu]
