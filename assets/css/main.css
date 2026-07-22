@@ -362,6 +362,46 @@ section { padding: 4rem 0; }
     linear-gradient(180deg, rgba(255, 90, 31, 0.06), transparent 60%);
 }
 
+.terminal {
+  max-width: 40rem;
+  border: 1px solid var(--border-strong);
+  background: #000;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.18);
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+.terminal::before {
+  content: "REF-DISPLAY // FAB-UNIT 1064";
+  position: absolute;
+  top: -0.6em;
+  left: 0.9em;
+  background: var(--bg);
+  padding: 0 0.5em;
+  font-family: var(--label);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: var(--fg-dim);
+}
+.terminal__line {
+  font-family: var(--readout);
+  font-size: 0.85rem;
+  color: var(--phosphor);
+  margin: 0 0 0.35em;
+  white-space: pre-wrap;
+}
+.terminal__line:last-child { margin-bottom: 0; }
+.terminal__line b { color: var(--hazard); font-weight: 400; }
+.terminal__cursor {
+  display: inline-block;
+  width: 0.5em;
+  height: 1em;
+  background: var(--phosphor);
+  vertical-align: text-bottom;
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
 .hero__eyebrow {
   font-family: var(--label);
   color: var(--accent-2);
