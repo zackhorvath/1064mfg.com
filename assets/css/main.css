@@ -205,8 +205,13 @@ code {
 /* -- header ------------------------------------------------------------ */
 
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   border-bottom: 2px solid var(--border-strong);
-  background: var(--bg);
+  background: var(--bg-panel);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .site-header__inner {
@@ -358,8 +363,77 @@ section { padding: 4rem 0; }
 .hero {
   padding: 5rem 0 4rem;
   border-bottom: 2px solid var(--border);
-  background:
-    linear-gradient(180deg, rgba(255, 90, 31, 0.06), transparent 60%);
+  background: linear-gradient(180deg, rgba(255, 90, 31, 0.06), transparent 60%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__map {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero__map-layer {
+  position: absolute;
+  inset: -12%;
+  -webkit-mask-position: center, center;
+  mask-position: center, center;
+  -webkit-mask-size: cover, cover;
+  mask-size: cover, cover;
+  -webkit-mask-repeat: no-repeat, no-repeat;
+  mask-repeat: no-repeat, no-repeat;
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
+/* purely atmospheric bloom, left-to-right — the .hero > .wrap backdrop
+   (below) is what actually guarantees text legibility, so this zone is
+   wide and forgiving rather than tuned to any exact column width */
+.hero__map-layer--contours {
+  background-color: var(--accent);
+  opacity: 0.3;
+  -webkit-mask-image: url("/img/topo-underlay-contours.svg"), linear-gradient(to right, transparent 0%, transparent 30%, black 78%);
+  mask-image: url("/img/topo-underlay-contours.svg"), linear-gradient(to right, transparent 0%, transparent 30%, black 78%);
+}
+
+.hero__map-layer--roads {
+  background-color: var(--fg);
+  opacity: 0.55;
+  -webkit-mask-image: url("/img/topo-underlay-roads.svg"), linear-gradient(to right, transparent 0%, transparent 30%, black 78%);
+  mask-image: url("/img/topo-underlay-roads.svg"), linear-gradient(to right, transparent 0%, transparent 30%, black 78%);
+}
+
+.hero__map-layer--secondary {
+  background-color: var(--accent-2);
+  opacity: 0.5;
+  -webkit-mask-image: url("/img/topo-underlay-secondary.svg"), linear-gradient(to right, transparent 0%, transparent 30%, black 78%);
+  mask-image: url("/img/topo-underlay-secondary.svg"), linear-gradient(to right, transparent 0%, transparent 30%, black 78%);
+}
+
+.hero__map-layer--ferry {
+  background-color: #646f73;
+  opacity: 0.6;
+  -webkit-mask-image: url("/img/topo-underlay-ferry.svg"), linear-gradient(to right, transparent 0%, transparent 30%, black 78%);
+  mask-image: url("/img/topo-underlay-ferry.svg"), linear-gradient(to right, transparent 0%, transparent 30%, black 78%);
+}
+
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--bg);
+  -webkit-mask-image: linear-gradient(to right, black 0%, transparent 80%);
+  mask-image: linear-gradient(to right, black 0%, transparent 80%);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  pointer-events: none;
+}
+
+.hero > .wrap {
+  position: relative;
+  z-index: 1;
 }
 
 .terminal {
@@ -414,6 +488,7 @@ section { padding: 4rem 0; }
   font-size: clamp(2.5rem, 7vw, 4.5rem);
   line-height: 0.95;
   margin-bottom: 0.4em;
+  text-shadow: 0 0 14px var(--bg), 0 0 4px var(--bg);
 }
 
 .hero__sub {

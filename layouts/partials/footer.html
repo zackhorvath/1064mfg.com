@@ -10,7 +10,10 @@
       {{ with .Site.Params.social.github }}<a href="{{ . }}" target="_blank" rel="noopener">GITHUB</a>{{ end }}
       <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
     </div>
-    <div class="copyright">&copy; {{ now.Format "2006" }} 1064 MFG LLC. ALL RIGHTS RESERVED.</div>
+    <div class="copyright">
+      &copy; {{ now.Format "2006" }} 1064 MFG LLC. ALL RIGHTS RESERVED.<br>
+      Hero map imagery based on map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors, &copy; <a href="https://www.mapbox.com/about/maps/" target="_blank" rel="noopener">Mapbox</a>.
+    </div>
   </div>
 </footer>
 

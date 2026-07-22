@@ -2,6 +2,13 @@
 {{ $hero := .Params.hero }}
 
 <section class="hero">
+  <div class="hero__map" aria-hidden="true">
+    <div class="hero__map-layer hero__map-layer--contours"></div>
+    <div class="hero__map-layer hero__map-layer--roads"></div>
+    <div class="hero__map-layer hero__map-layer--secondary"></div>
+    <div class="hero__map-layer hero__map-layer--ferry"></div>
+  </div>
+  <div class="hero__scrim" aria-hidden="true"></div>
   <div class="wrap">
     <div class="terminal">
       <div class="terminal__line">&gt; BOOT FAB-UNIT 1064 ................ <b>OK</b></div>
