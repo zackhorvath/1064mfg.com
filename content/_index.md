@@ -1,11 +1,11 @@
 ---
-title: "1064 MFG LLC"
+title: "1064 MFG"
 layout: "home"
 
 hero:
-  eyebrow: "UNIT-1064 // FABRICATION DIVISION"
+  eyebrow: "FABRICATION DIVISION"
   heading: "1064 MFG"
-  sub: "PRECISION FABRICATION FOR PEOPLE WHO BUILD THINGS"
+  sub: "CUSTOM CREATIONS FOR CREATIVE PEOPLE"
   body: >
     Additive manufacturing and laser engraving out of a garage-grown shop with
     a background in cosplay, prop-making, and getting the details right.
