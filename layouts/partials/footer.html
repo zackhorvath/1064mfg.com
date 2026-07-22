@@ -13,3 +13,30 @@
     <div class="copyright">&copy; {{ now.Format "2006" }} 1064 MFG LLC. ALL RIGHTS RESERVED.</div>
   </div>
 </footer>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var btns = document.querySelectorAll(".mode-switch__btn");
+    var mq = window.matchMedia("(prefers-color-scheme: light)");
+
+    function current() {
+      return root.getAttribute("data-theme") || (mq.matches ? "light" : "dark");
+    }
+    function reflect() {
+      var mode = current();
+      btns.forEach(function (b) {
+        b.setAttribute("aria-pressed", b.getAttribute("data-mode") === mode ? "true" : "false");
+      });
+    }
+    btns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var mode = btn.getAttribute("data-mode");
+        root.setAttribute("data-theme", mode);
+        try { localStorage.setItem("1064-theme", mode); } catch (e) {}
+        reflect();
+      });
+    });
+    reflect();
+  })();
+</script>

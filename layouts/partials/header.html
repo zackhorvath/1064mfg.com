@@ -1,14 +1,20 @@
 <header class="site-header">
   <div class="wrap site-header__inner">
-    <a class="brand" href="{{ "/" | relURL }}">
-      <span class="brand__mark">1064</span><span class="brand__type">MFG</span>
-    </a>
-    <nav class="nav" aria-label="Primary">
-      <ul>
-        {{ range .Site.Menus.main }}
-        <li><a href="{{ .URL | relURL }}">[ {{ .Name | upper }} ]</a></li>
-        {{ end }}
-      </ul>
-    </nav>
+    <div class="header-group">
+      <a class="brand" href="{{ "/" | relURL }}">
+        <span class="brand__mark">1064</span><span class="brand__type">MFG</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <ul>
+          {{ range .Site.Menus.main }}
+          <li><a href="{{ .URL | relURL }}">[ {{ .Name | upper }} ]</a></li>
+          {{ end }}
+        </ul>
+      </nav>
+    </div>
+    <div class="mode-switch" role="group" aria-label="Display mode">
+      <button type="button" class="mode-switch__btn" data-mode="dark" aria-pressed="false">CRT</button>
+      <button type="button" class="mode-switch__btn" data-mode="light" aria-pressed="false">PRINT</button>
+    </div>
   </div>
 </header>

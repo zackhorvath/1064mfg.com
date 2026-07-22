@@ -1,0 +1,206 @@
+{{ define "main" }}
+<style>
+  .ref-note { max-width: 42em; }
+  .ref-swatches {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border-strong);
+    margin-top: 1.5rem;
+  }
+  .ref-swatch {
+    background: var(--bg);
+    padding: 1rem 0.9rem;
+    min-height: 7.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .ref-swatch__chip {
+    width: 100%;
+    height: 2.6rem;
+    margin-bottom: 0.8em;
+    border: 1px solid var(--border-strong);
+  }
+  .ref-swatch__name {
+    font-family: var(--label);
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.2em;
+  }
+  .ref-swatch__hex {
+    font-family: var(--readout);
+    font-size: 0.68rem;
+    color: var(--fg-dim);
+  }
+  .ref-specimens {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border-strong);
+    margin-top: 1.5rem;
+  }
+  .ref-specimen {
+    background: var(--bg);
+    display: grid;
+    grid-template-columns: 16rem 1fr;
+    gap: 1.5rem;
+    padding: 1.2rem 1.4rem;
+    align-items: center;
+  }
+  .ref-specimen__meta {
+    font-family: var(--label);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    color: var(--fg-dim);
+  }
+  .ref-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  @media (max-width: 700px) {
+    .ref-swatches { grid-template-columns: repeat(2, 1fr); }
+    .ref-specimen { grid-template-columns: 1fr; }
+  }
+</style>
+
+<section class="contact" style="padding-top: 3rem;">
+  <div class="wrap">
+    <div class="contact__eyebrow">INTERNAL // NOT LINKED IN NAV, NOINDEXED</div>
+    <h1 class="contact__heading">Design Reference</h1>
+    <p class="contact__body ref-note">
+      Live production tokens and classes — nothing on this page is a mockup. Toggle
+      CRT / PRINT in the header to check both modes; the swatches below read straight
+      out of the current stylesheet, so they'll stay correct if the tokens change.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title"><span class="section-title__index">01</span> Color Tokens</h2>
+    <p class="contact__body ref-note">Six themed roles, plus two constants that never change with the mode.</p>
+    <div class="ref-swatches" id="ref-swatches">
+      <div class="ref-swatch" data-token="--bg"><div class="ref-swatch__chip"></div><div class="ref-swatch__name">--bg</div><div class="ref-swatch__hex"></div></div>
+      <div class="ref-swatch" data-token="--fg"><div class="ref-swatch__chip"></div><div class="ref-swatch__name">--fg</div><div class="ref-swatch__hex"></div></div>
+      <div class="ref-swatch" data-token="--fg-dim"><div class="ref-swatch__chip"></div><div class="ref-swatch__name">--fg-dim</div><div class="ref-swatch__hex"></div></div>
+      <div class="ref-swatch" data-token="--border-strong"><div class="ref-swatch__chip"></div><div class="ref-swatch__name">--border-strong</div><div class="ref-swatch__hex"></div></div>
+      <div class="ref-swatch" data-token="--accent"><div class="ref-swatch__chip"></div><div class="ref-swatch__name">--accent</div><div class="ref-swatch__hex"></div></div>
+      <div class="ref-swatch" data-token="--accent-2"><div class="ref-swatch__chip"></div><div class="ref-swatch__name">--accent-2</div><div class="ref-swatch__hex"></div></div>
+      <div class="ref-swatch" data-token="--hazard" data-constant="structural only, never text"><div class="ref-swatch__chip"></div><div class="ref-swatch__name">--hazard</div><div class="ref-swatch__hex"></div></div>
+      <div class="ref-swatch" data-token="--phosphor" data-constant="text on fixed-black chips only"><div class="ref-swatch__chip"></div><div class="ref-swatch__name">--phosphor</div><div class="ref-swatch__hex"></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title"><span class="section-title__index">02</span> Type Roles</h2>
+    <div class="ref-specimens">
+      <div class="ref-specimen">
+        <div class="ref-specimen__meta">DISPLAY<br>h1 / h3 / .brand / numerals</div>
+        <h3 style="margin: 0;">1064 MFG</h3>
+      </div>
+      <div class="ref-specimen">
+        <div class="ref-specimen__meta">LABEL<br>h2 / nav / eyebrows / panel tags</div>
+        <div style="font-family: var(--label); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.95rem;">[ SERVICES ]&nbsp;&nbsp;[ WORK ]&nbsp;&nbsp;[ CONTACT ]</div>
+      </div>
+      <div class="ref-specimen">
+        <div class="ref-specimen__meta">READOUT<br>.spec-list / inline &lt;code&gt;</div>
+        <ul class="spec-list" style="border: none; padding: 0; margin: 0;">
+          <li>BUILD VOL — 350 × 350 × 400mm</li>
+        </ul>
+      </div>
+      <div class="ref-specimen">
+        <div class="ref-specimen__meta">BODY<br>paragraphs, IBM Plex Mono 500</div>
+        <p style="margin: 0;">FDM and resin printing for props, functional parts, and prototypes — painted, finished, and assembly-ready on request.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title"><span class="section-title__index">03</span> Components</h2>
+
+    <div class="ref-row">
+      <a class="btn" href="#" onclick="return false;">[ SECONDARY ]</a>
+      <a class="btn btn--primary" href="#" onclick="return false;">[ REQUEST A QUOTE ]</a>
+    </div>
+
+    <div class="ref-row" style="margin-top: 2rem;">
+      <article class="panel" style="max-width: 22rem;">
+        <div class="panel__label">SVC-01</div>
+        <h3 style="margin: 0 0 0.3em;">Additive Manufacturing</h3>
+        <p style="color: var(--fg-dim); margin: 0 0 1em;">FDM and resin printing for props, functional parts, and prototypes.</p>
+        <ul class="spec-list">
+          <li>Build volume up to 350 × 350 × 400mm</li>
+          <li>PLA / PETG / ABS / ASA / TPU / resin</li>
+        </ul>
+      </article>
+
+      <article class="panel work-card reticle" style="max-width: 14rem;">
+        <div class="work-card__icon">{{ partial "icon.html" "printer" }}</div>
+        <div class="panel__label">WRK-01</div>
+        <h3 class="work-card__title">Gauss Rifle Prop</h3>
+        <p class="work-card__tag">Additive / Cosplay</p>
+      </article>
+
+      <div style="display: flex; align-items: baseline; gap: 1rem;">
+        <div class="process-step__num">01</div>
+        <div class="process-step__label">SPEC</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title"><span class="section-title__index">04</span> Motifs — Opt-In</h2>
+    <p class="contact__body ref-note">
+      <code>.hazard-stripe</code> and <code>.reticle</code> live in <code>main.css</code> but
+      aren't wired into any real template yet. The work card above is already wearing
+      <code>.reticle</code>. <code>.hazard-stripe</code> is reserved for one real shop
+      notice — lead time, capacity, that kind of thing — not a generic section break.
+    </p>
+    <div class="hazard-stripe" style="max-width: 24rem; margin-top: 1rem;"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title"><span class="section-title__index">05</span> Fonts</h2>
+    <ul class="spec-list">
+      <li>DISPLAY — Big Shoulders 900 — /fonts/big-shoulders-900.woff2</li>
+      <li>LABEL — Martian Mono 400 — /fonts/martian-mono-400.woff2</li>
+      <li>READOUT — Share Tech Mono 400 — /fonts/share-tech-mono-400.woff2</li>
+      <li>BODY — IBM Plex Mono 500 — /fonts/ibm-plex-mono-500.woff2</li>
+    </ul>
+  </div>
+</section>
+
+<script>
+  (function () {
+    function paint() {
+      var cs = getComputedStyle(document.documentElement);
+      document.querySelectorAll("#ref-swatches [data-token]").forEach(function (el) {
+        var token = el.getAttribute("data-token");
+        var val = cs.getPropertyValue(token).trim();
+        var constantNote = el.getAttribute("data-constant");
+        var chip = el.querySelector(".ref-swatch__chip");
+        var hex = el.querySelector(".ref-swatch__hex");
+        if (chip) chip.style.background = val;
+        if (hex) hex.textContent = constantNote ? (val + " — " + constantNote) : val;
+      });
+    }
+    paint();
+    document.querySelectorAll(".mode-switch__btn").forEach(function (b) {
+      b.addEventListener("click", function () { setTimeout(paint, 0); });
+    });
+  })();
+</script>
+{{ end }}

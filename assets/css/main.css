@@ -1,6 +1,44 @@
 /* ==========================================================================
    1064 MFG — cassette-futurism / industrial-catalog design system
+   Facility-grade rev: Black Mesa signage + Nostromo cargo-terminal wear
    ========================================================================== */
+
+@font-face {
+  font-family: "Big Shoulders";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("/fonts/big-shoulders-900.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Martian Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/martian-mono-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Share Tech Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/share-tech-mono-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-500.woff2") format("woff2");
+}
+
+/* ---- tokens ----------------------------------------------------------
+   Dark ("active display") is the default identity. Light ("printed
+   copy") is a deliberate inversion: dark mode's --fg (bone) becomes
+   light mode's --bg, and dark mode's --bg (void) becomes light mode's
+   --fg. --accent / --accent-2 are re-tuned per mode so they still pass
+   as legible text against a bright ground. --hazard and --phosphor are
+   constants — never themed, never set as page-body text color. -------- */
 
 :root {
   --bg: #0d0d0b;
@@ -13,10 +51,61 @@
   --accent-2: #2fb8a6;
   --border: #3a362c;
   --border-strong: #ece6d6;
-  --mono: ui-monospace, "SFMono-Regular", "JetBrains Mono", "IBM Plex Mono",
-    Menlo, Consolas, "Liberation Mono", monospace;
+  --hazard: #e8b923;
+  --phosphor: #2fb8a6;
+  --mono: ui-monospace, "SFMono-Regular", "IBM Plex Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  --label: "Martian Mono", var(--mono);
+  --display: "Big Shoulders", var(--mono);
+  --readout: "Share Tech Mono", var(--mono);
+  --body: "IBM Plex Mono", var(--mono);
   --gap: 1.5rem;
   --max: 1100px;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ece6d6;
+    --bg-panel: #ddd0a888;
+    --bg-panel-solid: #ddd0a8cc;
+    --fg: #0d0d0b;
+    --fg-dim: #59503a;
+    --accent: #a8390d;
+    --accent-dim: #6e260a;
+    --accent-2: #0d6a60;
+    --border: #cabf9a;
+    --border-strong: #0d0d0b;
+    color-scheme: light;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0d0d0b;
+  --bg-panel: #17161388;
+  --bg-panel-solid: #19181580;
+  --fg: #ece6d6;
+  --fg-dim: #9a927d;
+  --accent: #ff5a1f;
+  --accent-dim: #9c3d18;
+  --accent-2: #2fb8a6;
+  --border: #3a362c;
+  --border-strong: #ece6d6;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg: #ece6d6;
+  --bg-panel: #ddd0a888;
+  --bg-panel-solid: #ddd0a8cc;
+  --fg: #0d0d0b;
+  --fg-dim: #59503a;
+  --accent: #a8390d;
+  --accent-dim: #6e260a;
+  --accent-2: #0d6a60;
+  --border: #cabf9a;
+  --border-strong: #0d0d0b;
+  color-scheme: light;
 }
 
 * { box-sizing: border-box; }
@@ -27,9 +116,9 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--fg);
-  font-family: var(--mono);
+  font-family: var(--body);
   font-size: 16px;
-  line-height: 1.55;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -42,21 +131,36 @@ body {
 a { color: var(--accent-2); text-decoration-thickness: 1px; }
 a:hover { color: var(--accent); }
 
-h1, h2, h3 {
-  font-family: var(--mono);
+::selection { background: var(--accent); color: var(--bg); }
+
+/* Display: wordmark-scale headings and card titles. Only the 900 weight
+   is loaded, so this is the only weight that should be requested. */
+h1, h3 {
+  font-family: var(--display);
+  font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.4em;
+}
+
+/* Label: technical/placard register for section headings — the numeral
+   inside gets promoted to --display via .section-title__index. */
+h2 {
+  font-family: var(--label);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
   margin: 0 0 0.5em;
 }
 
-p { margin: 0 0 1em; color: var(--fg); }
+p { margin: 0 0 1em; color: var(--fg); font-weight: 500; }
 
 code {
-  font-family: var(--mono);
+  font-family: var(--readout);
   background: #000;
   border: 1px solid var(--border);
   padding: 0.1em 0.4em;
-  color: var(--accent-2);
+  color: var(--phosphor);
 }
 
 /* -- background texture ---------------------------------------------- */
@@ -66,7 +170,7 @@ code {
   inset: 0;
   pointer-events: none;
   z-index: 999;
-  background: repeating-linear-gradient(
+  background-image: repeating-linear-gradient(
     to bottom,
     rgba(236, 230, 214, 0.025) 0px,
     rgba(236, 230, 214, 0.025) 1px,
@@ -74,6 +178,28 @@ code {
     transparent 3px
   );
   mix-blend-mode: overlay;
+}
+@media (prefers-color-scheme: light) {
+  .scanlines {
+    background-image: radial-gradient(rgba(13, 13, 11, 0.05) 1px, transparent 1px);
+    background-size: 3px 3px;
+    mix-blend-mode: multiply;
+  }
+}
+:root[data-theme="dark"] .scanlines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(236, 230, 214, 0.025) 0px,
+    rgba(236, 230, 214, 0.025) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: overlay;
+}
+:root[data-theme="light"] .scanlines {
+  background-image: radial-gradient(rgba(13, 13, 11, 0.05) 1px, transparent 1px);
+  background-size: 3px 3px;
+  mix-blend-mode: multiply;
 }
 
 /* -- header ------------------------------------------------------------ */
@@ -90,17 +216,25 @@ code {
   padding-top: 1.1rem;
   padding-bottom: 1.1rem;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 1rem;
+}
+
+.header-group {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
 }
 
 .brand {
   display: inline-flex;
   align-items: baseline;
-  gap: 0.4rem;
+  gap: 0.35rem;
   text-decoration: none;
-  font-weight: 700;
-  font-size: 1.15rem;
-  letter-spacing: 0.06em;
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 1.3rem;
+  letter-spacing: 0.01em;
 }
 
 .brand__mark { color: var(--accent); }
@@ -118,18 +252,38 @@ code {
 .nav a {
   color: var(--fg);
   text-decoration: none;
+  font-family: var(--label);
   font-size: 0.85rem;
   letter-spacing: 0.05em;
 }
 
 .nav a:hover { color: var(--accent); }
 
+.mode-switch {
+  display: inline-flex;
+  border: 1px solid var(--border-strong);
+  flex: none;
+}
+.mode-switch__btn {
+  font-family: var(--label);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--fg-dim);
+  background: transparent;
+  border: none;
+  padding: 0.4em 0.75em;
+  cursor: pointer;
+}
+.mode-switch__btn + .mode-switch__btn { border-left: 1px solid var(--border-strong); }
+.mode-switch__btn[aria-pressed="true"] { background: var(--accent); color: var(--bg); }
+.mode-switch__btn:focus-visible { outline: 2px solid var(--accent-2); outline-offset: -2px; }
+
 /* -- buttons ------------------------------------------------------------ */
 
 .btn {
   display: inline-block;
-  font-family: var(--mono);
-  font-weight: 700;
+  font-family: var(--label);
+  font-weight: 400;
   letter-spacing: 0.05em;
   text-decoration: none;
   padding: 0.85em 1.4em;
@@ -149,7 +303,7 @@ code {
 .btn--primary {
   background: var(--accent);
   border-color: var(--accent);
-  color: #0d0d0b;
+  color: var(--bg);
   box-shadow: 4px 4px 0 0 var(--accent-dim);
 }
 
@@ -168,13 +322,14 @@ code {
 
 .panel__label {
   display: inline-block;
+  font-family: var(--label);
   font-size: 0.7rem;
   letter-spacing: 0.12em;
   color: var(--bg);
   background: var(--accent-2);
   padding: 0.2em 0.5em;
   margin-bottom: 0.9em;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 /* -- section scaffolding ------------------------------------------------- */
@@ -192,8 +347,10 @@ section { padding: 4rem 0; }
 }
 
 .section-title__index {
+  font-family: var(--display);
+  font-weight: 900;
   color: var(--accent);
-  font-size: 1rem;
+  font-size: 1.15rem;
 }
 
 /* -- hero ----------------------------------------------------------------- */
@@ -206,6 +363,7 @@ section { padding: 4rem 0; }
 }
 
 .hero__eyebrow {
+  font-family: var(--label);
   color: var(--accent-2);
   letter-spacing: 0.15em;
   font-size: 0.8rem;
@@ -219,6 +377,8 @@ section { padding: 4rem 0; }
 }
 
 .hero__sub {
+  font-family: var(--label);
+  font-weight: 400;
   color: var(--fg-dim);
   font-size: 1rem;
   letter-spacing: 0.08em;
@@ -251,6 +411,7 @@ section { padding: 4rem 0; }
 }
 
 .spec-list li {
+  font-family: var(--readout);
   font-size: 0.85rem;
   padding-left: 1.2em;
   position: relative;
@@ -287,6 +448,8 @@ section { padding: 4rem 0; }
 .work-card__title { font-size: 1rem; margin-bottom: 0.2em; }
 
 .work-card__tag {
+  font-family: var(--label);
+  font-weight: 400;
   font-size: 0.8rem;
   color: var(--fg-dim);
   text-transform: uppercase;
@@ -310,13 +473,16 @@ section { padding: 4rem 0; }
 }
 
 .process-step__num {
+  font-family: var(--display);
   font-size: 2rem;
   color: var(--accent);
-  font-weight: 700;
+  font-weight: 900;
   line-height: 1;
 }
 
 .process-step__label {
+  font-family: var(--label);
+  font-weight: 400;
   letter-spacing: 0.1em;
   font-size: 0.85rem;
   color: var(--fg-dim);
@@ -347,7 +513,13 @@ section { padding: 4rem 0; }
   gap: 1.5rem;
 }
 
-.cta-band__heading { margin-bottom: 0.2em; }
+.cta-band__heading {
+  font-family: var(--display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.2em;
+}
 .cta-band__body { color: var(--fg-dim); margin: 0; }
 
 /* -- contact page ------------------------------------------------------------------ */
@@ -355,6 +527,7 @@ section { padding: 4rem 0; }
 .contact { padding-top: 4rem; }
 
 .contact__eyebrow {
+  font-family: var(--label);
   color: var(--accent-2);
   letter-spacing: 0.15em;
   font-size: 0.8rem;
@@ -381,6 +554,7 @@ section { padding: 4rem 0; }
 
 .field label {
   display: block;
+  font-family: var(--label);
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   color: var(--fg-dim);
@@ -390,10 +564,10 @@ section { padding: 4rem 0; }
 .field input,
 .field textarea {
   width: 100%;
-  background: #000;
+  background: var(--bg-panel-solid);
   border: 2px solid var(--border);
   color: var(--fg);
-  font-family: var(--mono);
+  font-family: var(--body);
   font-size: 0.95rem;
   padding: 0.7em;
 }
@@ -434,6 +608,7 @@ section { padding: 4rem 0; }
   display: flex;
   flex-direction: column;
   gap: 0.15em;
+  font-family: var(--label);
   font-size: 0.75rem;
   color: var(--fg-dim);
   letter-spacing: 0.08em;
@@ -443,6 +618,7 @@ section { padding: 4rem 0; }
   display: flex;
   gap: 1.25rem;
   flex-wrap: wrap;
+  font-family: var(--label);
   font-size: 0.8rem;
 }
 
@@ -450,11 +626,45 @@ section { padding: 4rem 0; }
 
 .copyright {
   width: 100%;
+  font-family: var(--label);
   font-size: 0.7rem;
   color: var(--fg-dim);
   border-top: 1px dashed var(--border);
   padding-top: 1.2rem;
   margin-top: 0.5rem;
+}
+
+/* -- motifs (opt-in — not wired into any template yet) ---------------------------------- */
+
+/* Structural divider, not decoration. Reserve for one real shop notice
+   (lead-time changes, capacity, etc.) — not a generic section break. */
+.hazard-stripe {
+  height: 2rem;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--hazard), var(--hazard) 14px,
+    #000 14px, #000 28px
+  );
+}
+
+/* Corner-bracket reticle, four backgrounds, no extra markup. Reserve for
+   cards holding an actual physical object (.work-card), not every panel. */
+.reticle {
+  position: relative;
+  background-image:
+    linear-gradient(var(--accent-2), var(--accent-2)),
+    linear-gradient(var(--accent-2), var(--accent-2)),
+    linear-gradient(var(--accent-2), var(--accent-2)),
+    linear-gradient(var(--accent-2), var(--accent-2)),
+    linear-gradient(var(--accent-2), var(--accent-2)),
+    linear-gradient(var(--accent-2), var(--accent-2)),
+    linear-gradient(var(--accent-2), var(--accent-2)),
+    linear-gradient(var(--accent-2), var(--accent-2));
+  background-repeat: no-repeat;
+  background-size: 2px 12px, 2px 12px, 2px 12px, 2px 12px, 12px 2px, 12px 2px, 12px 2px, 12px 2px;
+  background-position:
+    0 0, 0 100%, 100% 0, 100% 100%,
+    0 0, 0 100%, 100% 0, 100% 100%;
 }
 
 /* -- responsive ----------------------------------------------------------------------- */
