@@ -283,6 +283,38 @@ code {
 .mode-switch__btn[aria-pressed="true"] { background: var(--accent); color: var(--bg); }
 .mode-switch__btn:focus-visible { outline: 2px solid var(--accent-2); outline-offset: -2px; }
 
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  flex: none;
+}
+.nav-toggle__bar {
+  display: block;
+  width: 1.1rem;
+  height: 2px;
+  background: var(--fg);
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.nav-toggle:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
+
 /* -- buttons ------------------------------------------------------------ */
 
 .btn {
@@ -791,10 +823,29 @@ section { padding: 4rem 0; }
   .contact__grid { grid-template-columns: 1fr; }
 }
 
+@media (max-width: 640px) {
+  .header-group { display: contents; }
+  .brand { order: 1; }
+  .header-controls { order: 2; }
+  .nav { order: 3; flex-basis: 100%; }
+  .nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    margin: 0;
+    padding-top: 0.5rem;
+    border-top: 1px dashed var(--border);
+  }
+  .nav[data-open="true"] ul { display: flex; }
+  .nav a { display: block; padding: 0.7rem 0; font-size: 0.95rem; }
+  .nav-toggle { display: inline-flex; }
+  .mode-switch__btn { font-size: 0.75rem; padding: 0.65em 1em; }
+}
+
 @media (max-width: 480px) {
   .work__grid { grid-template-columns: 1fr; }
   .process__grid { grid-template-columns: 1fr; }
-  .site-header__inner { flex-direction: column; align-items: flex-start; }
 }
 
 @media (prefers-reduced-motion: reduce) {

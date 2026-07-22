@@ -5,16 +5,23 @@
         <span class="brand__mark">1064</span><span class="brand__type">MFG</span>
       </a>
       <nav class="nav" aria-label="Primary">
-        <ul>
+        <ul id="primary-nav">
           {{ range .Site.Menus.main }}
           <li><a href="{{ .URL | relURL }}">[ {{ .Name | upper }} ]</a></li>
           {{ end }}
         </ul>
       </nav>
     </div>
-    <div class="mode-switch" role="group" aria-label="Display mode">
-      <button type="button" class="mode-switch__btn" data-mode="dark" aria-pressed="false">DARK</button>
-      <button type="button" class="mode-switch__btn" data-mode="light" aria-pressed="false">LIGHT</button>
+    <div class="header-controls">
+      <div class="mode-switch" role="group" aria-label="Display mode">
+        <button type="button" class="mode-switch__btn" data-mode="dark" aria-pressed="false">DARK</button>
+        <button type="button" class="mode-switch__btn" data-mode="light" aria-pressed="false">LIGHT</button>
+      </div>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
     </div>
   </div>
 </header>

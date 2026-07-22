@@ -42,4 +42,22 @@
     });
     reflect();
   })();
+
+  (function () {
+    var nav = document.querySelector(".nav");
+    var toggle = document.querySelector(".nav-toggle");
+    if (!nav || !toggle) return;
+
+    function setOpen(open) {
+      nav.setAttribute("data-open", open ? "true" : "false");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+
+    toggle.addEventListener("click", function () {
+      setOpen(nav.getAttribute("data-open") !== "true");
+    });
+    nav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () { setOpen(false); });
+    });
+  })();
 </script>
