@@ -21,7 +21,7 @@ sections:
         body:
           - "The 'Lone Evergreen' is my maker mark. It is how I sign my work."
           - "It's about forging your own path and building things meant to last. It's also a nod to the Pacific Northwest, where I'm from."
-      - heading: "Our Design Language"
+      - heading: "My Design Language"
         body:
           - "I love bold designs that tell a story, and I approach builds like layers of metal forged together. I go the extra mile on practical effects, often giving props multiple topcoats for texture and natural wear. Retro-futurism is a big influence too, especially stuff like Star Wars and Alien."
 

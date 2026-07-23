@@ -5,10 +5,10 @@ layout: "home"
 hero:
   eyebrow: "SMALL BATCH DESIGN STUDIO"
   heading: "1064MFG"
-  sub: "CUSTOM CREATIONS FOR CREATIVE PEOPLE"
+  sub: "FOR THE BUILDS THAT DON'T FIT A PRODUCT LISTING"
   body: >
     Additive manufacturing and laser engraving out of a garage-grown shop with
-    a background in prop-making and cosplay. 1064MFG exists for the builds that don't fit a standard product listing: one-off parts, quirky projects, and the stuff that needs an actual engineer looking at it.
+    a background in prop-making and cosplay. 1064MFG exists for your one-off parts, skunkworks projects, and the stuff you need an actual engineer looking at.
   cta_label: "REQUEST A QUOTE"
   cta_url: "/contact/"
 
@@ -17,7 +17,7 @@ services:
     name: "Additive Manufacturing"
     short: "3D Printing"
     body: >
-      With over 12 years of experience in FDM and resin printing for props, functional parts, and prototypes, we handle design, printing, assembly, and finishing across standard and exotic materials.
+      With over 12 years of experience in FDM and resin printing for props, functional parts, and prototypes, I handle design, printing, assembly, and finishing across standard and exotic materials.
     specs:
       - "FDM build volumes up to 350 x 350 x 350mm"
       - "Resin build volumes up to 211.68 × 118.37 × 220 mm"
@@ -27,9 +27,9 @@ services:
     name: "Fiber Laser Engraving & Cutting"
     short: "Laser Engraving"
     body: >
-      Our MOPA fiber laser adds adjustable pulse control on top of standard
+      My MOPA fiber laser adds adjustable pulse control on top of standard
       fiber marking - from deep structural engraving, light surface marking, and
-      true color marking, we can work with most non-ferrous materials. We do mugs too!
+      true color marking, I can work with most non-ferrous materials. I do mugs too!
     specs:
       - "Work area up to 220mm x 220mm"
       - "Stainless steel / aluminum / brass / titanium / coated & anodized metals"
@@ -41,7 +41,7 @@ services:
     name: "3D Modeling Support"
     short: "Design"
     body: >
-      We don't just click print! We help source, scan, review, and reinforce your model files so they
+      I don't just click print! I help source, scan, review, and reinforce your model files so they
       print clean and hold up at a con. Basic graphic design and artist
       referrals available too.
     specs:
@@ -55,7 +55,7 @@ services:
     short: "PC Builds"
     body: >
       Super custom PC builds with hardline acrylic watercooling,
-      personalized with 3D printed and laser engraved accents. We source
+      personalized with 3D printed and laser engraved accents. I source
       parts*, assemble, leak test, and handle upgrades on existing builds.
     specs:
       - "Full builds: parts sourcing, assembly, cable management"
@@ -94,11 +94,11 @@ process:
     label: "SPEC"
     body: "Send a model, sketch, or reference - plus some information about your project."
   - step: "02"
-    label: "ALIGNMENT"
-    body: "If there is a project fit, we work with you to establish an estimate and scope out your project."
+    label: "SCOPE"
+    body: "If there is a project fit, I'll work with you to establish an estimate and scope out your project."
   - step: "03"
     label: "FABRICATION"
-    body: "On acceptance, we begin the build process. Printed or engraved in-house, with defined milestone updates."
+    body: "On acceptance, I begin the build process. Printed or engraved in-house, with defined milestone updates."
   - step: "04"
     label: "DELIVER"
     body: "Local pickup or shipped."
