@@ -59,4 +59,108 @@
       link.addEventListener("click", function () { setOpen(false); });
     });
   })();
+
+  (function () {
+    var feed = document.getElementById("gcode-feed");
+    if (!feed) return;
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var VISIBLE_LINES = 3;
+    var PRUNE_AT = 60;
+    var lineStep = null;
+
+    // Scrolls .terminal__feed so exactly the last VISIBLE_LINES lines show
+    // through the fixed-height .terminal__viewport above it.
+    function scrollToBottom() {
+      var overflow = feed.children.length - VISIBLE_LINES;
+      feed.style.transform = "translateY(" + (overflow > 0 ? -overflow * lineStep : 0) + "px)";
+    }
+
+    // Drop old lines once the DOM list gets long, snapping back to
+    // translateY(0) in the same frame (transition disabled) so it's
+    // invisible - the remaining lines are already the ones on screen.
+    function pruneIfNeeded() {
+      if (feed.children.length <= PRUNE_AT) return;
+      var toDrop = feed.children.length - VISIBLE_LINES;
+      for (var i = 0; i < toDrop; i++) feed.removeChild(feed.firstElementChild);
+      feed.style.transition = "none";
+      feed.style.transform = "translateY(0)";
+      feed.offsetHeight; // eslint-disable-line no-unused-expressions
+      feed.style.transition = "";
+    }
+
+    function typeLine(text, onDone) {
+      var prevCursor = feed.querySelector(".terminal__cursor");
+      if (prevCursor) prevCursor.remove();
+
+      var div = document.createElement("div");
+      div.className = "terminal__line";
+      var textNode = document.createTextNode("");
+      div.appendChild(textNode);
+      var cursor = document.createElement("span");
+      cursor.className = "terminal__cursor";
+      div.appendChild(cursor);
+      feed.appendChild(div);
+
+      if (lineStep === null) {
+        var cs = getComputedStyle(div);
+        lineStep = div.offsetHeight + parseFloat(cs.marginBottom);
+      }
+      scrollToBottom();
+      pruneIfNeeded();
+
+      var i = 0;
+      (function typeStep() {
+        i++;
+        textNode.textContent = text.slice(0, i);
+        if (i < text.length) {
+          setTimeout(typeStep, 8 + Math.random() * 14);
+        } else {
+          onDone();
+        }
+      })();
+    }
+
+    function play(lines) {
+      if (!lines.length) return;
+
+      if (reduceMotion) {
+        feed.innerHTML = "";
+        feed.style.transform = "translateY(0)";
+        lines.slice(0, VISIBLE_LINES).forEach(function (line) {
+          var div = document.createElement("div");
+          div.className = "terminal__line";
+          div.textContent = line;
+          feed.appendChild(div);
+        });
+        var cursor = document.createElement("span");
+        cursor.className = "terminal__cursor";
+        feed.lastElementChild.appendChild(cursor);
+        return;
+      }
+
+      feed.innerHTML = "";
+      feed.style.transform = "translateY(0)";
+      lineStep = null;
+
+      var i = 0;
+      function tick() {
+        typeLine(lines[i % lines.length], function () {
+          i++;
+          var nextLine = lines[i % lines.length];
+          var pause = 90 + Math.random() * 140;
+          if (/^; CHANGE_LAYER/.test(nextLine)) pause += 300;
+          setTimeout(tick, pause);
+        });
+      }
+      tick();
+    }
+
+    fetch("/gcode/hero-print.gcode")
+      .then(function (res) { return res.ok ? res.text() : ""; })
+      .then(function (text) {
+        var lines = text.split("\n").map(function (l) { return l.trim(); }).filter(Boolean);
+        play(lines);
+      })
+      .catch(function () {});
+  })();
 </script>

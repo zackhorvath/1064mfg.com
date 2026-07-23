@@ -506,7 +506,7 @@ section { padding: 4rem 0; }
   position: relative;
 }
 .terminal::before {
-  content: "REF-DISPLAY // FAB-UNIT 1064";
+  content: "GCODE STREAM // FAB-UNIT 1064";
   position: absolute;
   top: -0.6em;
   left: 0.9em;
@@ -516,6 +516,20 @@ section { padding: 4rem 0; }
   font-size: 0.62rem;
   letter-spacing: 0.1em;
   color: var(--fg-dim);
+}
+/* Fixed-height window onto .terminal__feed, which grows downward as lines
+   are appended; feed is translated up so the terminal always shows exactly
+   as many lines as it did as a static 3-line block, but scrolls like a
+   printer's console instead of resizing the box. */
+.terminal__viewport {
+  height: 4.75rem;
+  overflow: hidden;
+}
+.terminal__feed {
+  transition: transform 0.28s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .terminal__feed { transition: none; }
 }
 .terminal__line {
   font-family: var(--readout);

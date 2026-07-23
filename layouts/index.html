@@ -10,10 +10,14 @@
   </div>
   <div class="hero__scrim" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="terminal">
-      <div class="terminal__line">&gt; BOOT 1064MFG // FABRICATION DIVISION ................ <b>OK</b></div>
-      <div class="terminal__line">&gt; CONNECTED: ICA.SYSTEMS // SEATTLE-TACOMA NETWORK</div>
-      <div class="terminal__line">&gt; READY<span class="terminal__cursor"></span></div>
+    <div class="terminal" aria-hidden="true">
+      <div class="terminal__viewport">
+        <div class="terminal__feed" id="gcode-feed">
+          <div class="terminal__line">; BambuStudio 02.07.01.57</div>
+          <div class="terminal__line">; total layer number: 53</div>
+          <div class="terminal__line">; total filament length [mm] : 3261.72<span class="terminal__cursor"></span></div>
+        </div>
+      </div>
     </div>
     <div class="hero__eyebrow">{{ $hero.eyebrow }}</div>
     <h1 class="hero__heading">
