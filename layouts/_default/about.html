@@ -1,0 +1,43 @@
+{{ define "main" }}
+<section class="about">
+  <div class="wrap">
+    <div class="about__eyebrow">{{ .Params.eyebrow }}</div>
+    <h1 class="about__heading">{{ .Params.heading }}</h1>
+
+    {{ range .Params.sections }}
+    <article class="panel about-block{{ if or .image .mark }} about-block--with-photo{{ end }}{{ if .reverse }} about-block--reverse{{ end }}">
+      {{ if .image }}
+      <img class="about-block__photo" src="{{ .image | relURL }}" alt="{{ .image_alt | default "" }}" width="640" height="960" loading="lazy">
+      {{ else if .mark }}
+      <div class="about-block__mark" aria-hidden="true">
+        {{ partial "maker-mark.html" . }}
+        <div class="about-block__mark-word"><span class="about-block__mark-word-1064">1064</span><span class="about-block__mark-word-mfg">MFG</span></div>
+      </div>
+      {{ end }}
+      <div class="about-block__content">
+        <div class="panel__label">{{ .code }}</div>
+        <h2 class="about-block__heading">{{ .heading }}</h2>
+        {{ if .subsections }}
+        {{ range .subsections }}
+        <h3 class="about-block__subheading">{{ .heading }}</h3>
+        {{ if .quote }}
+        {{ range .body }}
+        <blockquote class="about-block__quote">{{ . }}</blockquote>
+        {{ end }}
+        {{ else }}
+        {{ range .body }}
+        <p class="about-block__body">{{ . }}</p>
+        {{ end }}
+        {{ end }}
+        {{ end }}
+        {{ else }}
+        {{ range .body }}
+        <p class="about-block__body">{{ . }}</p>
+        {{ end }}
+        {{ end }}
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

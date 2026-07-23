@@ -32,6 +32,11 @@ disableKinds = ["taxonomy", "term"]
     url = "/#work"
     weight = 30
   [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 35
+  [[menu.main]]
     identifier = "contact"
     name = "Contact"
     url = "/contact/"
