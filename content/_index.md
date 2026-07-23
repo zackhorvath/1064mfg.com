@@ -3,7 +3,7 @@ title: "1064 MFG"
 layout: "home"
 
 hero:
-  eyebrow: "FABRICATION DIVISION"
+  eyebrow: "SMALL BATCH DESIGN"
   heading: "1064 MFG"
   sub: "CUSTOM CREATIONS FOR CREATIVE PEOPLE"
   body: >
