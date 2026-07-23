@@ -65,6 +65,12 @@ services:
 
 work:
   - code: "WRK-01"
+    title: "Fallout Costume"
+    tag: "FDM / Costuming"
+    icon: "gear"
+    image: "/img/wrk-03-armor.jpg"
+    image_alt: "Cosplayer wearing custom 3D printed armor and helmet, holding a prop weapon"
+  - code: "WRK-01"
     title: "Brass Lighters"
     tag: "Laser / Batch"
     icon: "laser"
@@ -76,18 +82,13 @@ work:
     icon: "laser"
     image: "/img/wrk-02-mugs.jpg"
     image_alt: "Enamel camp mug laser engraved with a custom topographic map design"
-  - code: "WRK-03"
-    title: "Fallout Costume"
-    tag: "FDM / Costuming"
-    icon: "gear"
-    image: "/img/wrk-03-armor.jpg"
-    image_alt: "Cosplayer wearing custom 3D printed armor and helmet, holding a prop weapon"
+
   - code: "WRK-04"
-    title: "Death Mask"
-    tag: "Resin / Costuming"
-    icon: "plaque"
-    image: "/img/wrk-04-mask.jpg"
-    image_alt: "Cosplayer wearing a bronze resin skull-motif half mask"
+    title: "Custom Watercooling"
+    tag: "Watercooling / PC Build"
+    icon: "gear"
+    image: "/img/wrk-04-watercooling.jpg"
+    image_alt: "Open-air PC build with hardline watercooling loop, orange tubing, and RGB fans"
 
 process:
   - step: "01"
