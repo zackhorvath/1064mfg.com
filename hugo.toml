@@ -7,7 +7,7 @@ disableKinds = ["taxonomy", "term"]
 [params]
   tagline = "CUSTOM CREATIONS"
   subtagline = "Additive Manufacturing // Laser Engraving"
-  description = "1064MFG - 3D printing and laser engraving services. From rapid prototypes to finished props, built to spec."
+  description = "1064MFG is a small-batch fabrication shop in Kent, WA focusing on 3D printing, laser engraving, and custom PC builds. All done one project at a time."
   founded = "2026"
   serial = "KENT, WA"
 

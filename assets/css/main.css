@@ -32,18 +32,18 @@
   src: url("/fonts/ibm-plex-mono-500.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Barlow";
+  font-family: "Public Sans";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/fonts/barlow-400.woff2") format("woff2");
+  src: url("/fonts/public-sans-400.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Barlow";
+  font-family: "Public Sans";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("/fonts/barlow-600.woff2") format("woff2");
+  src: url("/fonts/public-sans-600.woff2") format("woff2");
 }
 
 /* ---- tokens ----------------------------------------------------------
@@ -73,7 +73,7 @@
   --display: "Big Shoulders", var(--mono);
   --readout: "Share Tech Mono", var(--mono);
   --body: "IBM Plex Mono", var(--mono);
-  --prose: "Barlow", -apple-system, "Segoe UI", sans-serif;
+  --prose: "Public Sans", -apple-system, "Segoe UI", sans-serif;
   --gap: 1.5rem;
   --max: 1100px;
   color-scheme: dark;
@@ -526,7 +526,10 @@ section { padding: 4rem 0; }
   overflow: hidden;
 }
 .terminal__feed {
-  transition: transform 0.28s ease;
+  /* Must settle well before the next line's typing cycle begins (as low
+     as ~240ms: 150ms min type time + 90ms min pause), or each new line's
+     scroll retriggers mid-animation and the feed never stops sliding. */
+  transition: transform 0.12s ease-out;
 }
 @media (prefers-reduced-motion: reduce) {
   .terminal__feed { transition: none; }

@@ -109,11 +109,18 @@
       pruneIfNeeded();
 
       var i = 0;
+      // Floor/ceiling on the WHOLE line's typing duration (not a per-char
+      // delay cap - that fails on short lines, e.g. 2 chars * 26ms = 52ms,
+      // which is faster than the scroll transition and is what caused the
+      // scroll to visibly outrun the typing). Every line, short or long,
+      // takes 150-260ms to type out; per-char delay is derived from that.
+      var typeDuration = Math.min(260, Math.max(150, text.length * 11)) * (0.85 + Math.random() * 0.3);
+      var perCharDelay = typeDuration / Math.max(text.length, 1);
       (function typeStep() {
         i++;
         textNode.textContent = text.slice(0, i);
         if (i < text.length) {
-          setTimeout(typeStep, 8 + Math.random() * 14);
+          setTimeout(typeStep, perCharDelay);
         } else {
           onDone();
         }

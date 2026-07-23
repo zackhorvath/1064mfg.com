@@ -8,7 +8,7 @@ hero:
   sub: "CUSTOM CREATIONS FOR CREATIVE PEOPLE"
   body: >
     Additive manufacturing and laser engraving out of a garage-grown shop with
-    a background in prop-making and cosplay. 1064MFG specializes in solving unique engineering challenges to help you bring your ideas to life.
+    a background in prop-making and cosplay. 1064MFG exists for the builds that don't fit a standard product listing: one-off parts, weird materials, the stuff that needs an actual engineer looking at it.
   cta_label: "REQUEST A QUOTE"
   cta_url: "/contact/"
 
@@ -17,7 +17,7 @@ services:
     name: "Additive Manufacturing"
     short: "3D Printing"
     body: >
-      With over 12 years of experience with FDM and Resin printing for props, functional parts, and prototypes, we are able to offer a variety of design, printing, assembly, and finishing services in a wide variety of standard and exotic materials. 
+      With over 12 years of experience in FDM and resin printing for props, functional parts, and prototypes, we handle design, printing, assembly, and finishing across standard and exotic materials.
     specs:
       - "FDM build volumes up to 350 x 350 x 350mm"
       - "Resin build volumes up to 211.68 × 118.37 × 220 mm"

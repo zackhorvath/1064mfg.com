@@ -13,7 +13,7 @@ sections:
       - heading: "Who is 1064MFG?"
         body:
           - "1064MFG LLC is a micro-scale design and prototyping studio which was created to formalize several projects I've been working on."
-          - "What sets 1064MFG apart is a commitment to working at the individual level, and curating projects to make sure there is mutual alignment in our mission."
+          - "1064MFG works directly with each client instead of running high-volume batches, and takes on projects selectively so they're a good fit for both sides."
       - heading: "What does the name stand for?"
         body:
           - "The name is inspired by the 1064nm laser diode, which is commonly used for fiber laser engraving!"
@@ -24,10 +24,6 @@ sections:
       - heading: "Our Design Language"
         body:
           - "I love bold designs that tell a story, and I approach builds like layers of metal forged together. I go the extra mile on practical effects, often giving props multiple topcoats for texture and natural wear. Retro-futurism is a big influence too, especially stuff like Star Wars and Alien."
-      - heading: "What is our Mission Statement?"
-        quote: true
-        body:
-          - "Building cool shit for cool people."
 
   - code: "OP-02"
     heading: "About Me"
@@ -37,6 +33,6 @@ sections:
       - "Hi folks, I'm Zack!"
       - "My creative journey began with basic small business website design, and leveled up in a big way in 2014 with my first 3D printer. Back in those days, you had to assemble your own printer if you wanted a good one, and much like building a computer, it's a great way to really learn the ins and outs of the process."
       - "At this point I've got thousands of hours behind a 3D printer, from building and maintaining them to just running the things, and I've worked across basic, engineering, and exotic filaments for everything from cosplay armor to automotive parts. That skillset has expanded into modeling, graphic design, and most recently laser engraving, each with its own learning curve."
-      - "Outside of the studio, I maintain a position as a Staff Engineer at a technology company. Tech has been, and continues to be, a foundational part of my personal and professional life and I don't plan on slowing down."
+      - "Outside of the studio, I work as a Staff Engineer at a technology company. My passion for technology has been a constant in my life and continues to complement my creative side as well."
       - "Thanks for visiting! -Zack"
 ---
