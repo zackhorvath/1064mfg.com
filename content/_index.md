@@ -8,8 +8,8 @@ hero:
   sub: "CUSTOM CREATIONS FOR CREATIVE PEOPLE"
   body: >
     Additive manufacturing and laser engraving out of a garage-grown shop with
-    a background in prop-making, cosplay, and getting the details right. 1064MFG specializes in solving unique engineering challenges to help you bring your ideas to life.
-  cta_label: "[ REQUEST A QUOTE ]"
+    a background in prop-making and cosplay. 1064MFG specializes in solving unique engineering challenges to help you bring your ideas to life.
+  cta_label: "REQUEST A QUOTE"
   cta_url: "/contact/"
 
 services:

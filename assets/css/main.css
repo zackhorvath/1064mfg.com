@@ -31,6 +31,20 @@
   font-display: swap;
   src: url("/fonts/ibm-plex-mono-500.woff2") format("woff2");
 }
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/barlow-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/barlow-600.woff2") format("woff2");
+}
 
 /* ---- tokens ----------------------------------------------------------
    Dark ("active display") is the default identity. Light ("printed
@@ -59,6 +73,7 @@
   --display: "Big Shoulders", var(--mono);
   --readout: "Share Tech Mono", var(--mono);
   --body: "IBM Plex Mono", var(--mono);
+  --prose: "Barlow", -apple-system, "Segoe UI", sans-serif;
   --gap: 1.5rem;
   --max: 1100px;
   color-scheme: dark;
@@ -582,7 +597,7 @@ section { padding: 4rem 0; }
 }
 
 .service-card__name { font-size: 1.3rem; }
-.service-card__body { color: var(--fg-dim); }
+.service-card__body { font-family: var(--prose); color: var(--fg-dim); }
 
 .spec-list {
   list-style: none;
@@ -679,7 +694,7 @@ section { padding: 4rem 0; }
   margin: 0.4em 0 0.6em;
 }
 
-.process-step__body { font-size: 0.9rem; color: var(--fg-dim); }
+.process-step__body { font-family: var(--prose); font-size: 0.9rem; color: var(--fg-dim); }
 
 /* -- cta band -------------------------------------------------------------------- */
 
@@ -710,7 +725,7 @@ section { padding: 4rem 0; }
   letter-spacing: 0.01em;
   margin-bottom: 0.2em;
 }
-.cta-band__body { color: var(--fg-dim); margin: 0; }
+.cta-band__body { font-family: var(--prose); color: var(--fg-dim); margin: 0; }
 
 /* -- contact page ------------------------------------------------------------------ */
 
@@ -725,7 +740,7 @@ section { padding: 4rem 0; }
 }
 
 .contact__heading { font-size: 2.5rem; }
-.contact__body { max-width: 42em; color: var(--fg-dim); }
+.contact__body { font-family: var(--prose); max-width: 42em; color: var(--fg-dim); }
 
 .notice {
   border-color: var(--accent);
@@ -846,7 +861,7 @@ section { padding: 4rem 0; }
 }
 .about-block__subheading:first-of-type { margin-top: 0; }
 
-.about-block__body { color: var(--fg-dim); }
+.about-block__body { font-family: var(--prose); color: var(--fg-dim); }
 .about-block__body:last-child { margin-bottom: 0; }
 
 .about-block__quote {

@@ -8,7 +8,7 @@
       <nav class="nav" aria-label="Primary">
         <ul id="primary-nav">
           {{ range .Site.Menus.main }}
-          <li><a href="{{ .URL | relURL }}">[ {{ .Name | upper }} ]</a></li>
+          <li><a href="{{ .URL | relURL }}">{{ .Name | upper }}</a></li>
           {{ end }}
         </ul>
       </nav>

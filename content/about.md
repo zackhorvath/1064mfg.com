@@ -20,10 +20,10 @@ sections:
       - heading: "What's the deal with the tree?"
         body:
           - "The 'Lone Evergreen' is my maker mark. It is how I sign my work."
-          - "It symbolizes a dedication of forging your own path, building solutions to stand the test of time, and also represents my connection with the Pacific Northwest." 
+          - "It's about forging your own path and building things meant to last. It's also a nod to the Pacific Northwest, where I'm from."
       - heading: "Our Design Language"
         body:
-          - "I love bold designs that tell a story, and approach designs like layers of metal being forged together. I go the extra mile for practical effects, often giving props multiple topcoats to create texture, and natural wear patterns - and draw inspiration from the retro futurism themes from franchises like Star Wars and Alien."
+          - "I love bold designs that tell a story, and I approach builds like layers of metal forged together. I go the extra mile on practical effects, often giving props multiple topcoats for texture and natural wear. Retro-futurism is a big influence too, especially stuff like Star Wars and Alien."
       - heading: "What is our Mission Statement?"
         quote: true
         body:
@@ -35,8 +35,8 @@ sections:
     image_alt: "Zack in full cosplay armor and helmet, holding a prop weapon"
     body:
       - "Hi folks, I'm Zack!"
-      - "My creative journey began with basic small business website design, and leveled up in a big way in 2014 with my first 3D printer. Back in those days, you had to assemble your own printer if you wanted a good one - and much like building a computer it's a great way to really learn the ins and outs of the process."
-      - "At this point I've got thousands of hours behind a 3D printer - building them, maintaining them, running them... and I've worked across basic, engineering, and exotic filaments for everything from cosplay armor to automotive parts. This skillset has expanded to modeling, graphic design, and most recently laser engraving. All different workflows with their own set of challenges and areas to master!"
+      - "My creative journey began with basic small business website design, and leveled up in a big way in 2014 with my first 3D printer. Back in those days, you had to assemble your own printer if you wanted a good one, and much like building a computer, it's a great way to really learn the ins and outs of the process."
+      - "At this point I've got thousands of hours behind a 3D printer, from building and maintaining them to just running the things, and I've worked across basic, engineering, and exotic filaments for everything from cosplay armor to automotive parts. That skillset has expanded into modeling, graphic design, and most recently laser engraving, each with its own learning curve."
       - "Outside of the studio, I maintain a position as a Staff Engineer at a technology company. Tech has been, and continues to be, a foundational part of my personal and professional life and I don't plan on slowing down."
       - "Thanks for visiting! -Zack"
 ---
