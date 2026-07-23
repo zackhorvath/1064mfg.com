@@ -11,12 +11,18 @@
   <div class="hero__scrim" aria-hidden="true"></div>
   <div class="wrap">
     <div class="terminal">
-      <div class="terminal__line">&gt; BOOT FAB-UNIT 1064 ................ <b>OK</b></div>
-      <div class="terminal__line">&gt; LOAD SHOP QUEUE: ADDITIVE / LASER</div>
+      <div class="terminal__line">&gt; BOOT 1064MFG // FABRICATION DIVISION ................ <b>OK</b></div>
+      <div class="terminal__line">&gt; CONNECTED: ICA.SYSTEMS // SEATTLE-TACOMA NETWORK</div>
       <div class="terminal__line">&gt; READY<span class="terminal__cursor"></span></div>
     </div>
     <div class="hero__eyebrow">{{ $hero.eyebrow }}</div>
-    <h1 class="hero__heading">{{ $hero.heading }}</h1>
+    <h1 class="hero__heading">
+      {{ if hasPrefix $hero.heading "1064" }}
+      <span class="hero__heading-logo">{{ partial "maker-mark.html" . }}</span><span class="hero__heading-mark">1064</span>{{ substr $hero.heading 4 }}
+      {{ else }}
+      {{ $hero.heading }}
+      {{ end }}
+    </h1>
     <p class="hero__sub">{{ $hero.sub }}</p>
     <p class="hero__body">{{ $hero.body }}</p>
     <a class="btn btn--primary" href="{{ $hero.cta_url | relURL }}">{{ $hero.cta_label }}</a>

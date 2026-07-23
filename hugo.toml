@@ -1,14 +1,13 @@
 baseURL = "https://1064mfg.com/"
 locale = "en-US"
-title = "1064 MFG"
+title = "1064MFG"
 enableRobotsTXT = true
 disableKinds = ["taxonomy", "term"]
 
 [params]
   tagline = "CUSTOM CREATIONS"
   subtagline = "Additive Manufacturing // Laser Engraving"
-  description = "1064 MFG - 3D printing and laser engraving services. From rapid prototypes to finished props, built to spec."
-  email = "zack@1064mfg.com"
+  description = "1064MFG - 3D printing and laser engraving services. From rapid prototypes to finished props, built to spec."
   founded = "2026"
   serial = "KENT, WA"
 

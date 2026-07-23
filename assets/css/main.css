@@ -234,12 +234,22 @@ code {
 .brand {
   display: inline-flex;
   align-items: baseline;
-  gap: 0.35rem;
   text-decoration: none;
   font-family: var(--display);
   font-weight: 900;
   font-size: 1.3rem;
   letter-spacing: 0.01em;
+}
+
+.brand__logo {
+  display: inline-flex;
+  margin-right: 0.35rem;
+  color: var(--accent);
+}
+.brand__logo svg {
+  height: 0.72em;
+  width: auto;
+  display: block;
 }
 
 .brand__mark { color: var(--accent); }
@@ -248,6 +258,7 @@ code {
 .nav ul {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 1.25rem;
   margin: 0;
   padding: 0;
@@ -255,6 +266,8 @@ code {
 }
 
 .nav a {
+  display: block;
+  line-height: 1;
   color: var(--fg);
   text-decoration: none;
   font-family: var(--label);
@@ -521,6 +534,28 @@ section { padding: 4rem 0; }
   line-height: 0.95;
   margin-bottom: 0.4em;
   text-shadow: 0 0 14px var(--bg), 0 0 4px var(--bg);
+}
+
+.hero__heading-mark { color: var(--accent); }
+
+.hero__heading-logo {
+  display: inline-flex;
+  align-items: baseline;
+  vertical-align: baseline;
+  margin-right: 0.15em;
+  color: var(--accent);
+  filter: drop-shadow(0 0 14px var(--bg)) drop-shadow(0 0 4px var(--bg));
+}
+.hero__heading-logo svg {
+  height: 0.77em;
+  width: auto;
+  display: block;
+}
+/* synthetic bold: heavy display type needs the mark bulked up to match;
+   a same-color stroke fattens the fill and closes down the tree cutout. */
+.hero__heading-logo svg path {
+  stroke: currentColor;
+  stroke-width: 4;
 }
 
 .hero__sub {
