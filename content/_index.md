@@ -8,7 +8,7 @@ hero:
   sub: "CUSTOM CREATIONS FOR CREATIVE PEOPLE"
   body: >
     Additive manufacturing and laser engraving out of a garage-grown shop with
-    a background in prop-making and cosplay. 1064MFG exists for the builds that don't fit a standard product listing: one-off parts, weird materials, the stuff that needs an actual engineer looking at it.
+    a background in prop-making and cosplay. 1064MFG exists for the builds that don't fit a standard product listing: one-off parts, quirky projects, and the stuff that needs an actual engineer looking at it.
   cta_label: "REQUEST A QUOTE"
   cta_url: "/contact/"
 
