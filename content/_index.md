@@ -1,10 +1,10 @@
 ---
-title: "1064 MFG"
+title: "1064MFG"
 layout: "home"
 
 hero:
   eyebrow: "SMALL BATCH DESIGN"
-  heading: "1064 MFG"
+  heading: "1064MFG"
   sub: "CUSTOM CREATIONS FOR CREATIVE PEOPLE"
   body: >
     Additive manufacturing and laser engraving out of a garage-grown shop with
