@@ -973,6 +973,16 @@ section { padding: 4rem 0; }
   .nav a { display: block; padding: 0.7rem 0; font-size: 0.95rem; }
   .nav-toggle { display: inline-flex; }
   .mode-switch__btn { font-size: 0.75rem; padding: 0.65em 1em; }
+
+  /* On mobile the hero is tall and narrow instead of short and wide, which
+     flips which axis "cover" scales against — it stops cropping the map
+     vertically and reveals the full height of the artwork (including the
+     bridge north of the intended crop). Pin the vertical scale so the same
+     portion of the map stays framed regardless of hero height. */
+  .hero__map-layer {
+    -webkit-mask-size: auto 160%, cover;
+    mask-size: auto 160%, cover;
+  }
 }
 
 @media (max-width: 480px) {
