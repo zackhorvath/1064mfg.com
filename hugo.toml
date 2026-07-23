@@ -5,7 +5,7 @@ enableRobotsTXT = true
 disableKinds = ["taxonomy", "term"]
 
 [params]
-  tagline = "CUSTOM CREATIONS"
+  tagline = "Micro Design"
   subtagline = "Additive Manufacturing // Laser Engraving"
   description = "1064MFG is a small-batch fabrication shop in Kent, WA focusing on 3D printing, laser engraving, and custom PC builds."
   founded = "2026"
