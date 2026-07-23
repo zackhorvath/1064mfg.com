@@ -506,7 +506,7 @@ section { padding: 4rem 0; }
   position: relative;
 }
 .terminal::before {
-  content: "GCODE STREAM // FAB-UNIT 1064";
+  content: "GCODE STREAM // OUTPUT";
   position: absolute;
   top: -0.6em;
   left: 0.9em;
