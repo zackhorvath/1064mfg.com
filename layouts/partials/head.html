@@ -9,7 +9,7 @@
       } catch (e) {}
     })();
   </script>
-  <title>{{ if .IsHome }}{{ .Site.Title }} — {{ .Site.Params.tagline }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
+  <title>{{ if .IsHome }}{{ .Site.Title }} // {{ .Site.Params.tagline }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ .Site.Params.description }}">
   <link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
   <link rel="canonical" href="{{ .Permalink }}">

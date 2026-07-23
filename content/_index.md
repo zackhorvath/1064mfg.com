@@ -35,45 +35,33 @@ services:
       - "Stainless steel / aluminum / brass / titanium / coated & anodized metals"
       - "Experimental engravings on ceramics, glass, etc."
       - "MOPA color marking - no ink, no coating"
-      - "Adjustable pulse width - deep engraving to light surface marking"
-      - "Rotary attachment for cylindrical items — tumblers, bottles, rings"
+      - "Rotary attachment for cylindrical items: tumblers, bottles, rings, etc"
       - "Batch runs & material sourcing available"
   - code: "SVC-03"
-    name: "Custom Design Solutions"
+    name: "3D Modeling Support"
     short: "Design"
     body: >
-      We don't just click print! 1064MFG can source high-quality model files
-      for your build, 3D scan an existing object or part when no file exists,
-      and review your proposal before it ever hits the bed, flagging weak
-      points and orientation issues that would cause a failed print. Files get
-      modified for reinforcement, hardware fit, and con-ready durability. We
-      also handle basic graphic design in-house, or can connect you with an
-      artist for larger projects.
+      We don't just click print! We help source, scan, review, and reinforce your model files so they
+      print clean and hold up at a con. Basic graphic design and artist
+      referrals available too.
     specs:
-      - "3D scanning for existing objects, parts, and custom fits"
+      - "In house 3D scanning for reverse engineering"
       - "Model sourcing, including licensed 3D printable prop collections (e.g. Galactic Armory)"
-      - "Printability review — orientation, tolerances, and weak points checked before printing"
-      - "File modification: wall reinforcement, hardware pockets, joint fitting"
-      - "Con-ready prep for durability under wear, transport, and handling"
-      - "Basic graphic design for labels, badges, and signage"
-      - "Referrals to independent graphic artists for larger projects"
+      - "Printability review before it hits the bed"
+      - "File modification, reinforcement and con-ready prep"
+      - "Basic graphic design, or referrals to artists"
   - code: "SVC-04"
-    name: "Custom Tech Solutions"
+    name: "Custom PC Builds"
     short: "PC Builds"
     body: >
-      Stylized PC builds, planned from parts selection through final cable
-      dress — including hardline acrylic and PETG watercooling loops bent and
-      fit in-house. Cases get personalized with 3D printed brackets, reservoir
-      mounts, and cable combs, plus laser-engraved panels and badges pulled
-      straight from our other services. We'll spec a build to a budget and
-      aesthetic, source parts, and handle full assembly and leak-testing.
+      Super custom PC builds with hardline acrylic watercooling,
+      personalized with 3D printed and laser engraved accents. We source
+      parts*, assemble, leak test, and handle upgrades on existing builds.
     specs:
       - "Full builds: parts sourcing, assembly, cable management"
-      - "Hardline acrylic / PETG tubing — custom bent watercooling loops"
-      - "Custom reservoir mounts, brackets, and cable combs — 3D printed in-house"
-      - "Laser-engraved panels, badges, and branding"
-      - "Leak testing and burn-in before delivery"
-      - "Upgrades and loop rework on existing builds"
+      - "Hardline acrylic / PETG custom bent watercooling loops"
+      - "3D printed brackets, reservoir mounts, laser engraved panels, and more"
+      - "Leak testing, upgrades, and loop rework"
 
 work:
   - code: "WRK-01"
