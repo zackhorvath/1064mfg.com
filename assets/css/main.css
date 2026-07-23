@@ -625,7 +625,7 @@ section { padding: 4rem 0; }
 }
 
 .spec-list li {
-  font-family: var(--readout);
+  font-family: "IBM Plex Mono", var(--mono);
   font-size: 0.85rem;
   padding-left: 1.2em;
   position: relative;
