@@ -12,6 +12,7 @@ disableKinds = ["taxonomy", "term"]
   serial = "KENT, WA"
 
   [params.social]
+    blog = "https://zack.zip"
     instagram = "https://www.instagram.com/horvaticus"
     github = "https://github.com/zackhorvath"
 
