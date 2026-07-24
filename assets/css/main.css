@@ -495,9 +495,17 @@ section { padding: 4rem 0; }
    needs more suppression than the same layers do as a glow on dark mode's
    near-black ground, so light mode gets a stronger tint here. */
 @media (prefers-color-scheme: light) {
-  .hero__frost { background: color-mix(in srgb, var(--bg) 32%, transparent); }
+  .hero__frost {
+    background: color-mix(in srgb, var(--bg) 32%, transparent);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+  }
 }
-:root[data-theme="light"] .hero__frost { background: color-mix(in srgb, var(--bg) 32%, transparent); }
+:root[data-theme="light"] .hero__frost {
+  background: color-mix(in srgb, var(--bg) 32%, transparent);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
 
 .hero__scrim {
   position: absolute;
