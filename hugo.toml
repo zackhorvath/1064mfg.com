@@ -10,6 +10,7 @@ disableKinds = ["taxonomy", "term"]
   description = "1064MFG is a small-batch fabrication shop in Kent, WA focusing on 3D printing, laser engraving, and custom PC builds."
   founded = "2026"
   serial = "KENT, WA"
+  lead_time = "4-6 weeks"
 
   [params.social]
     blog = "https://zack.zip"
