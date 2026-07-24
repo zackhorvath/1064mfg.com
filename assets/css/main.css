@@ -85,7 +85,7 @@
     --bg-panel: #ddd0a888;
     --bg-panel-solid: #ddd0a8cc;
     --fg: #0d0d0b;
-    --fg-dim: #59503a;
+    --fg-dim: #463d28;
     --accent: #a8390d;
     --accent-dim: #6e260a;
     --accent-2: #0d6a60;
@@ -114,7 +114,7 @@
   --bg-panel: #ddd0a888;
   --bg-panel-solid: #ddd0a8cc;
   --fg: #0d0d0b;
-  --fg-dim: #59503a;
+  --fg-dim: #463d28;
   --accent: #a8390d;
   --accent-dim: #6e260a;
   --accent-2: #0d6a60;
@@ -491,6 +491,13 @@ section { padding: 4rem 0; }
   backdrop-filter: blur(3px);
   pointer-events: none;
 }
+/* Dark map linework (roads/contours) reads as ink on a light ground and
+   needs more suppression than the same layers do as a glow on dark mode's
+   near-black ground, so light mode gets a stronger tint here. */
+@media (prefers-color-scheme: light) {
+  .hero__frost { background: color-mix(in srgb, var(--bg) 32%, transparent); }
+}
+:root[data-theme="light"] .hero__frost { background: color-mix(in srgb, var(--bg) 32%, transparent); }
 
 .hero__scrim {
   position: absolute;
@@ -572,6 +579,7 @@ section { padding: 4rem 0; }
   letter-spacing: 0.15em;
   font-size: 0.8rem;
   margin-bottom: 1rem;
+  text-shadow: 0 0 6px var(--bg), 0 0 2px var(--bg);
 }
 
 .hero__heading {
@@ -611,11 +619,13 @@ section { padding: 4rem 0; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 1.5em;
+  text-shadow: 0 0 6px var(--bg), 0 0 2px var(--bg);
 }
 
 .hero__body {
   max-width: 42em;
   color: var(--fg);
+  text-shadow: 0 0 6px var(--bg), 0 0 2px var(--bg);
 }
 
 /* -- services -------------------------------------------------------------- */
