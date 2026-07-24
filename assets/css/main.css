@@ -479,6 +479,19 @@ section { padding: 4rem 0; }
   mask-image: url("/img/topo-underlay-ferry.svg"), linear-gradient(to right, transparent 0%, transparent 30%, black 78%);
 }
 
+/* Whole-hero smoked-glass pass, unmasked (unlike .hero__scrim below, which
+   only fades in over the left text column) - knocks the topo map's contrast
+   down everywhere so the hero block reads as one settled surface. */
+.hero__frost {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: color-mix(in srgb, var(--bg) 13%, transparent);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  pointer-events: none;
+}
+
 .hero__scrim {
   position: absolute;
   inset: 0;
